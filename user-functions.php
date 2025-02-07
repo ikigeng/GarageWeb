@@ -30,7 +30,7 @@ function updateUserProfile($userId, $newDetails, $conn) {
     // Close the statement
     $stmt->close();
 }
-
+#dd
 
 function updateUserPassword($userId, $newPassword, $conn) {
     // Prepare an SQL statement to update user password
