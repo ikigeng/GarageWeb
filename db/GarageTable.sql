@@ -21,7 +21,7 @@ create table WebAdmin(
 AdminID int identity(1,1) primary key,
 AdminName nvarchar(20),
 AdminEmail nvarchar(50),
-AdminPasss nvarchar(20)
+AdminPass nvarchar(20)
 );
 create table PurchaseHistory(
 PurchaseID  int identity(1,1) primary key,
@@ -29,4 +29,5 @@ UserID int foreign key references Users(UserID),
 ProductID int foreign key references Products(ProductID),
 Purchase_date datetime default current_timestamp,
 Payment_Method nvarchar(10)
+ServiceID int foreign key references GarageServices(ServiceID)
 );
