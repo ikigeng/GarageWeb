@@ -1,5 +1,4 @@
 CREATE PROCEDURE AddAdmin
-    @ADMINID NVARCHAR(50),
     @ADMINNAME NVARCHAR(100),
     @ADMINEMAIL NVARCHAR(100),
     @ADMINPASS NVARCHAR(255)
@@ -15,19 +14,15 @@ BEGIN
     END
 
     -- Check if ADMINID already exists
-    IF EXISTS (SELECT 1 FROM WebAdmin WHERE ADMINID = @ADMINID)
+    IF EXISTS (SELECT 1 FROM WebAdmin WHERE ADMINID = @ADMINEMAIL)
     BEGIN
         RAISERROR('ADMINID already exists.', 16, 1);
         RETURN;
     END
 
-    -- Hash the admin password before storing
-    DECLARE @HashedPassword VARBINARY(64);
-    SET @HashedPassword = HASHBYTES('SHA2_256', CONVERT(VARBINARY, @ADMINPASS));
-
     -- Insert the new admin
-    INSERT INTO WebAdmin (ADMINID, ADMINNAME, ADMINEMAIL, ADMINPASS)
-    VALUES (@ADMINID, @ADMINNAME, @ADMINEMAIL, @HashedPassword);
+    INSERT INTO WebAdmin (ADMINNAME, ADMINEMAIL, ADMINPASS)
+    VALUES (@ADMINNAME, @ADMINEMAIL, @ADMINPASS);
 
     PRINT 'Admin successfully added.';
 END;
