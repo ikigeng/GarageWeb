@@ -56,6 +56,7 @@ function userAuthentication($Email, $Password, $conn)
         }
     }
 }
+
 function adminAuthentication($Email, $Password, $conn){
     
     if (isset($_POST['login_admin'])) {
@@ -104,13 +105,29 @@ function adminAuthentication($Email, $Password, $conn){
             } else {
     
                 array_push($errors, "Invalid Admin account");
-            }
-    
-    
+            }   
     
         } else {
             array_push($errors, "Unknown Error!");
         }
     }
 }
+
+// Function to register a new user with hashed password
+function registerUser($Email, $Password, $conn) {
+    $hashedPassword = password_hash($Password, PASSWORD_DEFAULT);
+    $query = "INSERT INTO Users (Email, User_Password) VALUES (?, ?)";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("ss", $Email, $hashedPassword);
+    $stmt->execute();
+}
+
+// Function to register a new admin with hashed password
+// function registerAdmin($Email, $Password, $conn) {
+//     $hashedPassword = password_hash($Password, PASSWORD_DEFAULT);
+//     $query = "INSERT INTO WebAdmin (AdminEmail, AdminPass) VALUES (?, ?)";
+//     $stmt = $conn->prepare($query);
+//     $stmt->bind_param("ss", $Email, $hashedPassword);
+//     $stmt->execute();
+// }
 ?>
