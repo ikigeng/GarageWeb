@@ -1,33 +1,37 @@
-create table Users(
-UserID int identity(1,1) primary key,
-Email nvarchar(50),
-User_password nvarchar(20),
-User_address nvarchar(50)
+CREATE TABLE Users (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    Email NVARCHAR(50) UNIQUE NOT NULL,
+    User_password NVARCHAR(255) NOT NULL,  -- Store hashed passwords
+    User_address NVARCHAR(100)
 );
-create table Products(
-ProductID int identity(1,1) primary key,
-ProductName nvarchar(20),
-ProductDesc text,
-Price decimal(8,2) not null,
-Sold bit not null,
+
+CREATE TABLE Products (
+    ProductID INT IDENTITY(1,1) PRIMARY KEY,
+    ProductName NVARCHAR(50) NOT NULL,
+    ProductDesc NVARCHAR(MAX),
+    Price DECIMAL(8,2) NOT NULL,
+    Sold BIT NOT NULL DEFAULT 0
 );
-create table GarageServices(
-ServiceID int identity(1,1) primary key,
-ServiceName nvarchar(20),
-ServiceDesc text,
-MinimumPrice decimal(10,2) not null
+
+CREATE TABLE GarageServices (
+    ServiceID INT IDENTITY(1,1) PRIMARY KEY,
+    ServiceName NVARCHAR(50) NOT NULL,
+    ServiceDesc NVARCHAR(MAX),
+    MinimumPrice DECIMAL(10,2) NOT NULL
 );
-create table WebAdmin(
-AdminID int identity(1,1) primary key,
-AdminName nvarchar(20),
-AdminEmail nvarchar(50),
-AdminPass nvarchar(20)
+
+CREATE TABLE WebAdmin (
+    AdminID INT IDENTITY(1,1) PRIMARY KEY,
+    AdminName NVARCHAR(50) NOT NULL,
+    AdminEmail NVARCHAR(50) UNIQUE NOT NULL,
+    AdminPass NVARCHAR(255) NOT NULL  -- Store hashed passwords
 );
-create table PurchaseHistory(
-PurchaseID  int identity(1,1) primary key,
-UserID int foreign key references Users(UserID),
-ProductID int foreign key references Products(ProductID),
-ServiceID int foreign key references GarageServices(ServiceID),
-Purchase_date datetime default current_timestamp,
-Payment_Method nvarchar(100),
+
+CREATE TABLE PurchaseHistory (
+    PurchaseID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT NOT NULL FOREIGN KEY REFERENCES Users(UserID),
+    ProductID INT NULL FOREIGN KEY REFERENCES Products(ProductID),
+    ServiceID INT NULL FOREIGN KEY REFERENCES GarageServices(ServiceID),
+    Purchase_date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    Payment_Method NVARCHAR(50) NOT NULL
 );

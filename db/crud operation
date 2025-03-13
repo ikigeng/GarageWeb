@@ -1,0 +1,83 @@
+-- USERS CRUD
+-- Create
+INSERT INTO Users (Email, User_password, User_address) 
+VALUES ('user@example.com', 'hashedpassword123', '123 Main St');
+
+-- Read
+SELECT * FROM Users;
+
+-- Update
+UPDATE Users 
+SET User_address = '456 New Address' 
+WHERE UserID = 1;
+
+-- Delete
+DELETE FROM Users WHERE UserID = 1;
+
+
+-- PRODUCTS CRUD
+-- Create
+INSERT INTO Products (ProductName, ProductDesc, Price, Sold) 
+VALUES ('Car Tire', 'High-quality tire for all cars', 120.50, 0);
+
+-- Read
+SELECT * FROM Products;
+
+-- Update
+UPDATE Products 
+SET Price = 110.00 
+WHERE ProductID = 1;
+
+-- Delete
+DELETE FROM Products WHERE ProductID = 1;
+
+
+-- GARAGE SERVICES CRUD
+-- Create
+INSERT INTO GarageServices (ServiceName, ServiceDesc, MinimumPrice) 
+VALUES ('Oil Change', 'Complete oil change service', 50.00);
+
+-- Read
+SELECT * FROM GarageServices;
+
+-- Update
+UPDATE GarageServices 
+SET MinimumPrice = 55.00 
+WHERE ServiceID = 1;
+
+-- Delete
+DELETE FROM GarageServices WHERE ServiceID = 1;
+
+
+-- WEB ADMIN CRUD
+-- Create
+INSERT INTO WebAdmin (AdminName, AdminEmail, AdminPass) 
+VALUES ('Admin User', 'admin@example.com', 'hashedpassword');
+
+-- Read
+SELECT * FROM WebAdmin;
+
+-- Update
+UPDATE WebAdmin 
+SET AdminPass = 'newhashedpassword' 
+WHERE AdminID = 1;
+
+-- Delete
+DELETE FROM WebAdmin WHERE AdminID = 1;
+
+
+-- PURCHASE HISTORY CRUD
+-- Create
+INSERT INTO PurchaseHistory (UserID, ProductID, ServiceID, Payment_Method) 
+VALUES (1, 1, NULL, 'Credit Card');
+
+-- Read
+SELECT * FROM PurchaseHistory;
+
+-- Update
+UPDATE PurchaseHistory 
+SET Payment_Method = 'PayPal' 
+WHERE PurchaseID = 1;
+
+-- Delete
+DELETE FROM PurchaseHistory WHERE PurchaseID = 1;
