@@ -5,3 +5,7 @@ deployment:
     - /bin/cp style.css $DEPLOYPATH
     - /bin/cp script.js $DEPLOYPATH
     - /bin/cp -R images/ $DEPLOYPATH
+    - /bin/cp Front-end/img/ $DEPLOYPATH
+    - /bin/cp Front-end/Photos/ $DEPLOYPATH
+    - /bin/cp Front-end/index-2.html $DEPLOYPATH
+    - /bin/cp Front-end/index-old.html $DEPLOYPATH
