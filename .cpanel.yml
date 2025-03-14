@@ -9,3 +9,4 @@ deployment:
     - /bin/cp Front-end/Photos/ $DEPLOYPATH
     - /bin/cp Front-end/index-2.html $DEPLOYPATH
     - /bin/cp Front-end/index-old.html $DEPLOYPATH
+    - /bin/cp -R Front-end/* $DEPLOYPATH
