@@ -39,27 +39,31 @@ body {
     width: 100%;
     height: 60px;
     top: 0;
-    position: sticky;   
+    position: sticky;
     opacity: 0.70;
     background: black;
-    overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 55px;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.navbar-brand .logo {
+    width: 130px;
+    height: 60px;
 }
 
 .nav-links {
     display: flex;
     gap: 15px;
-    position: relative;
-    right: 40px;
+    align-items: center;
+    
 }
 
 .nav-item {
     width: auto;
     height: 40px;
-    position: relative;
     text-align: center;
     justify-content: center;
     display: flex;
@@ -72,10 +76,20 @@ body {
     padding: 0 10px;
 }
 
-.navbar-brand .logo {
-    width: 130px;
-    height: 60px;
-    left: 40px;
+.hamburger {
+  display: none; /* Hidden by default, shown in media query */
+  cursor: pointer;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.nav-links.active {
+    display: flex; /* Class to toggle visibility */
 }
 
 .line-1 {
@@ -140,7 +154,7 @@ body {
     left: 10%;
     top: 20%;
     position: absolute;
-    text-align: center;
+    text-align: justify;
     font-size: clamp(1.5rem, 2vw, 2rem);
     font-family: "Monotype Corsiva";
     font-weight: 400;
@@ -299,19 +313,19 @@ body {
 }
 
 .contact-icon {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     position: relative;
     z-index: 1;
 }
 
 .contact-text {
-    width: 80%;
-    font-size: 1rem;
+    width: 50%;
+    font-size: 1.3rem;
     font-family: Montserrat;
     font-weight: 500;
     text-align: center;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     z-index: 1;
 }
 
@@ -895,32 +909,91 @@ body {
 
 /* Media Queries */
 @media (max-width: 768px) {
-    .nav-links {
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
+    .nav-bar {
         width: 100%;
+        height: 40px;   
+        top: 0;
+        position: sticky;
+        opacity: 0.70;
         background: black;
-        display: none; /* Hidden by default, toggle with JavaScript if needed */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        z-index: 1000;
     }
-    .line-1{
-        width: auto;
-        height: auto;
-    }
-
-    .nav-item {
-        width: 100%;
-        padding: 15px;
-    }
-
+    
     .navbar-brand .logo {
-        width: 100px;
+        width: 50px;
+        height: 40px;
+    }
+    
+    .nav-links {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .nav-item {
+        width: auto;
+        height: 40px;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 16px;
+        font-family: Montserrat;
+        font-weight: 400;
+        word-wrap: break-word;
+        padding: 0 10px;
+    }
+    
+    .hamburger {
+        display: block; /* Hidden by default on desktop */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+    }
+    
+    .hamburger span {
+        width: 100%;
+        height: 3px;
+        background: white;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-links.active {
+        display: flex; /* Class to toggle visibility */
     }
 
-    .hero-text, .hero-description {
+    .hero-text {
         left: 5%;
-        width: 90%;
+        width: 50%;
+        font-size: x-small;
+        top: 30%;
+    }
+    .hero-description{
+        left: 5%;
+        width: 50%;
+        font-size: x-small;
+        top: 45%;
+
+    }
+    .social-media-sidebar{
+        width: 20px;
+    height: 110px;
+    position: absolute;
+    right: 20px;
+    top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    }
+    .social-icon{
+        width: 20px;
+        height: 20px;
     }
 
     .car-logos {
@@ -938,12 +1011,25 @@ body {
     }
 
     .contact-bar {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        
+    }
+    .contact-icon{
+        width: 20px;
+        height: 20px;
     }
 
     .contact-item {
         width: 100%;
+        height: 90px;
+    }
+    .contact-text{
+        font-size: 0.8rem;
+        width: fit-content;
+    }
+    .contact-value{
+        font-size: 0.8rem;
+        width: fit-content;
     }
 
     .service-card {
@@ -1003,7 +1089,11 @@ body {
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .nav-links {
-        gap: 10px;
+        display: flex; /* Always show on larger screens */
+    }
+
+    .hamburger {
+        display: none; /* Hidden on larger screens */
     }
 
     .hero-text, .hero-description {
@@ -1080,7 +1170,7 @@ body {
     }
 
     .contact-item {
-        width: 30%;
+        width: 35%;
     }
 
     .service-card {
