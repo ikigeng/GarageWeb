@@ -1,0 +1,62 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# Composer
+composer.phar
+/vendor/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Configuration with sensitive information
+config.php
+database.php
+*config*.ini
+
+# Cache and logs
+/var/cache/*
+/var/logs/*
+/logs/*
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build directories
+/build/
+/dist/
+/public/build/
+
+# IDE and editor folders
+/.idea/
+/.vscode/
+*.sublime-project
+*.sublime-workspace
+*.komodoproject
+.komodotools/
+
+# OS files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Temporary files
+*.swp
+*.swo
+*.tmp
+*.bak
+*~
+
+# other files
+db/GarageDiagram.png
+Front-end/index-old.html
