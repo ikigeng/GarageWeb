@@ -46,7 +46,7 @@ function userAuthentication($Email, $Password, $conn)
     
             } else {
     
-                array_push($errors, "Invalid Admin account");
+                array_push($errors, "Invalid User account");
             }
     
     
