@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background: #D9D9D9;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.header-content {
+    position: relative;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+    background: white;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 120px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.nav-menu {
+    position: absolute;
+    top: 61px;
+    left: 489px;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.header h1 {
+    font-family: 'Monotype Corsiva', cursive;
+    font-size: 32px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.header p {
+    font-family: 'Monotype Corsiva', cursive;
+    font-size: 13px;
+    text-align: center;
+}
+
+.breadcrumb {
+    text-align: center;
+    font-size: 13px;
+    margin: 20px 0;
+}
+
+.header .social-icons {
+    position: absolute;
+    right: 20px;
+    top: 236px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Appointment Form */
+.appointment-form {
+    background: white;
+    padding: 40px 20px;
+}
+
+.appointment-form h2 {
+    font-size: 32px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.form-group input {
+    height: 63px;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* Services */
+.services {
+    background: white;
+    padding: 20px;
+}
+
+.services h3 {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.service-item label {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.services button {
+    display: block;
+    margin: 0 auto;
+    padding: 15px 30px;
+    background: linear-gradient(0deg, white 44%, #999999 100%);
+    border-radius: 15px;
+    border: 1px solid black;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(0deg, #FF914D 0%, #C0EDF8 100%);
+    padding: 40px 20px 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.footer-logo {
+    font-family: 'Monotype Corsiva', cursive;
+    font-size: 50px;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.footer-column h4 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.footer-column p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 26px;
+    height: 26px;
+    background: black;
+}
+
+.footer-bottom {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-menu {
+        position: static;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .header .social-icons {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        font-size: 20px;
+    }
+    
+    .header h1 {
+        font-size: 24px;
+    }
+    
+    .appointment-form h2 {
+        font-size: 28px;
+    }
+    
+    .form-group label {
+        font-size: 18px;
+    }
+    
+    .footer-logo {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu a {
+        font-size: 16px;
+    }
+    
+    .form-group label {
+        font-size: 16px;
+    }
+    
+    .service-item label {
+        font-size: 16px;
+    }
+    
+    .services button {
+        font-size: 16px;
+    }
+    
+    .footer-column h4 {
+        font-size: 20px;
+    }
+    
+    .footer-column p {
+        font-size: 14px;
+    }
+}

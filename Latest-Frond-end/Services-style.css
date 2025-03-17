@@ -1,0 +1,398 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background: #D9D9D9;
+    border: 1px solid black;
+    
+}
+
+.header-content {
+    position: relative;
+}
+
+.nav-bar {
+    width: 100%;
+    height: 60px;
+    top: 0;
+    position: sticky;
+    
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 1000;
+}
+
+.navbar-brand .logo {
+    width: 130px;
+    height: 60px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    
+}
+
+.nav-item {
+    width: auto;
+    height: 40px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 16px;
+    font-family: Montserrat;
+    font-weight: 400;
+    word-wrap: break-word;
+    padding: 0 10px;
+}
+
+.hamburger {
+display: none; /* Hidden by default, shown in media query */
+cursor: pointer;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.nav-links.active {
+    display: flex; /* Class to toggle visibility */
+}
+
+.title {
+    font-family: 'Monotype Corsiva', cursive;
+    font-size: 32px;
+    text-align: center;
+    margin: 40px;
+}
+
+.subtitle {
+    font-family: 'Monotype Corsiva', cursive;
+    font-size: 13px;
+    text-align: center;
+    margin: 40px;
+}
+
+.breadcrumb {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 20px;
+    margin: 40px;
+}
+
+/* Services */
+.services {
+    background: white;
+    padding: 40px 20px;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: white;
+    border-radius: 15px;
+    border: 1px solid black;
+    padding: 20px;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background: #C0EDF8;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    opacity: 0.5;
+}
+
+.service-card h3 {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #FF914D;
+}
+
+.service-card p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #FF914D;
+}
+
+/* Appointment */
+.appointment {
+    background: white;
+    padding: 40px 20px;
+    text-align: center; 
+}
+
+.appointment h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.appointment h2 span {
+    color: #FF0000;
+}
+
+.appointment p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(0deg, #FF914D 0%, #C0EDF8 100%);
+}
+.footer-line-1, .footer-line-2 {
+    height: 2px;
+    width: 300px;
+    background: black;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+
+.footer-line-1 {
+    width: 38%;
+    left: 0;
+}
+
+.footer-line-2 {
+    width: 38%;
+    right: 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+}
+
+.footer-logo {
+    font-family: 'Monotype Corsiva', cursive;
+    font-size: 50px;
+    text-align: center;
+    grid-column: 1 / -1;
+}
+
+.footer-column h4 {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.footer-column p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 26px;
+    height: 26px;
+    background: black;
+}
+
+.footer-bottom {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 16px;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+  
+
+}
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+  
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  .fa-whatsapp{
+    background: green;
+    color: white;
+  }
+  
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-links {
+        display: flex; /* Always show on larger screens */
+    }
+
+    .hamburger {
+        display: none; /* Hidden on larger screens */
+    }
+    
+    .service-card h3 {
+        font-size: 22px;
+    }
+    
+    .appointment h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        width: 100%;
+        height: 40px;   
+        top: 0;
+        position: sticky;
+        opacity: 0.70;
+        background: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+        z-index: 1000;
+    }
+    
+        .navbar-brand .logo {
+            width: 50px;
+            height: 40px;
+        }
+    
+    .nav-links {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .nav-item {
+        width: auto;
+        height: 40px;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 16px;
+        font-family: Montserrat;
+        font-weight: 400;
+        word-wrap: break-word;
+        padding: 0 10px;
+    }
+    
+    .hamburger {
+        display: block; /* Hidden by default on desktop */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+    }
+    
+    .hamburger span {
+        width: 100%;
+        height: 3px;
+        background: white;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-links.active {
+        display: flex; /* Class to toggle visibility */
+    }
+    
+    .title {
+        font-size: 24px;
+    }
+    
+    .appointment h2 {
+        font-size: 28px;
+    }
+    
+    .appointment p {
+        font-size: 18px;
+    }
+    
+    .footer-logo {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu a {
+        font-size: 16px;
+    }
+    
+    .service-card h3 {
+        font-size: 20px;
+    }
+    
+    .service-card p {
+        font-size: 14px;
+    }
+    
+    .appointment h2 {
+        font-size: 24px;
+    }
+    
+    .footer-column h4 {
+        font-size: 20px;
+    }
+    
+    .footer-column p {
+        font-size: 14px;
+    }
+}
