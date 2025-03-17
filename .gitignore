@@ -50,13 +50,8 @@ $RECYCLE.BIN/
 *.msp
 *.lnk
 
-# Temporary files
-*.swp
-*.swo
-*.tmp
-*.bak
-*~
 
 # other files
 db/GarageDiagram.png
 Front-end/index-old.html
+old and mysql complete.zip
