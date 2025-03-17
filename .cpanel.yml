@@ -9,4 +9,4 @@ deployment:
     # - /bin/cp -r Front-end/SvgFiles/. $DEPLOYPATH/SvgFiles/
     - /bin/cp User-auth.php $DEPLOYPATH
     - /bin/cp User-functions.php $DEPLOYPATH
-    - /bin/find Front-end -type f -maxdepth 2 -exec /bin/cp {} $DEPLOYPATH \;
+    - /bin/find -type f -maxdepth 2 -exec /bin/cp {} $DEPLOYPATH \;
