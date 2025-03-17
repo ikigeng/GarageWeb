@@ -1,6 +1,6 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/kkaugcih/GarageWeb
+    - export DEPLOYPATH=/home/kkaugcih/public_html
     # - export REPOPATH=/home/kkaugcih/GarageWeb
     - /bin/cp Front-end/Home-index.html $DEPLOYPATH
     # - /bin/cp Front-end/*.html $DEPLOYPATH
