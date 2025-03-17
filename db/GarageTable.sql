@@ -1,37 +1,40 @@
 CREATE TABLE Users (
-    UserID INT IDENTITY(1,1) PRIMARY KEY,
-    Email NVARCHAR(50) UNIQUE NOT NULL,
-    User_password NVARCHAR(255) NOT NULL,  -- Store hashed passwords
-    User_address NVARCHAR(100)
+    UserID INT AUTO_INCREMENT PRIMARY KEY,
+    Email VARCHAR(50) UNIQUE NOT NULL,
+    User_password VARCHAR(255) NOT NULL,  -- Store hashed passwords
+    User_address VARCHAR(100)
 );
 
 CREATE TABLE Products (
-    ProductID INT IDENTITY(1,1) PRIMARY KEY,
-    ProductName NVARCHAR(50) NOT NULL,
-    ProductDesc NVARCHAR(MAX),
+    ProductID INT AUTO_INCREMENT PRIMARY KEY,
+    ProductName VARCHAR(50) NOT NULL,
+    ProductDesc TEXT,
     Price DECIMAL(8,2) NOT NULL,
-    Sold BIT NOT NULL DEFAULT 0
+    Sold TINYINT(1) NOT NULL DEFAULT 0  -- Using TINYINT for boolean value
 );
 
 CREATE TABLE GarageServices (
-    ServiceID INT IDENTITY(1,1) PRIMARY KEY,
-    ServiceName NVARCHAR(50) NOT NULL,
-    ServiceDesc NVARCHAR(MAX),
+    ServiceID INT AUTO_INCREMENT PRIMARY KEY,
+    ServiceName VARCHAR(50) NOT NULL,
+    ServiceDesc TEXT,
     MinimumPrice DECIMAL(10,2) NOT NULL
 );
 
 CREATE TABLE WebAdmin (
-    AdminID INT IDENTITY(1,1) PRIMARY KEY,
-    AdminName NVARCHAR(50) NOT NULL,
-    AdminEmail NVARCHAR(50) UNIQUE NOT NULL,
-    AdminPass NVARCHAR(255) NOT NULL  -- Store hashed passwords
+    AdminID INT AUTO_INCREMENT PRIMARY KEY,
+    AdminName VARCHAR(50) NOT NULL,
+    AdminEmail VARCHAR(50) UNIQUE NOT NULL,
+    AdminPass VARCHAR(255) NOT NULL  -- Store hashed passwords
 );
 
 CREATE TABLE PurchaseHistory (
-    PurchaseID INT IDENTITY(1,1) PRIMARY KEY,
-    UserID INT NOT NULL FOREIGN KEY REFERENCES Users(UserID),
-    ProductID INT NULL FOREIGN KEY REFERENCES Products(ProductID),
-    ServiceID INT NULL FOREIGN KEY REFERENCES GarageServices(ServiceID),
+    PurchaseID INT AUTO_INCREMENT PRIMARY KEY,
+    UserID INT NOT NULL,
+    ProductID INT NULL,
+    ServiceID INT NULL,
     Purchase_date DATETIME DEFAULT CURRENT_TIMESTAMP,
-    Payment_Method NVARCHAR(50) NOT NULL
+    Payment_Method VARCHAR(50) NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID),
+    FOREIGN KEY (ProductID) REFERENCES Products(ProductID),
+    FOREIGN KEY (ServiceID) REFERENCES GarageServices(ServiceID)
 );

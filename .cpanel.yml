@@ -1,12 +1,12 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/kkaugcih/public_html
-    - /bin/cp Front-end/index.html $DEPLOYPATH
-    - /bin/cp Front-end/style.css $DEPLOYPATH
-    - /bin/cp -r Front-end/img/. $DEPLOYPATH/img/
-    - /bin/cp -r Front-end/Photos/. $DEPLOYPATH/Photos/
-    - /bin/cp Front-end/index-2.html $DEPLOYPATH
-    - /bin/cp Front-end/index-old.html $DEPLOYPATH
+    - export REPOPATH=/home/kkaugcih/repositories/GarageWeb
+    - /bin/cp index.html $DEPLOYPATH
+    # - /bin/cp Front-end/*.html $DEPLOYPATH
+    # - /bin/cp Front-end/*.css $DEPLOYPATH
+    # - /bin/cp -r Front-end/Photos/. $DEPLOYPATH/Photos/
+    # - /bin/cp -r Front-end/SvgFiles/. $DEPLOYPATH/SvgFiles/
     - /bin/cp User-auth.php $DEPLOYPATH
     - /bin/cp User-functions.php $DEPLOYPATH
-    - /bin/find Front-end -type f -maxdepth 1 -exec /bin/cp {} $DEPLOYPATH \;
+    - /bin/find -type f -maxdepth 2 -exec /bin/cp {} $DEPLOYPATH \;
