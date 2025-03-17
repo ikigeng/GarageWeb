@@ -25,7 +25,7 @@
                         <div class="nav-item about">About</div>
                     </a>
                     <a class="nav-link" href="Services-index.html">
-                        <div class="nav-item services">Services</div>
+                        <div class="nav-item servicesS">Services</div>
                     </a>
                     <a class="nav-link" href="Appointment-index.html">
                         <div class="nav-item appointment">Take appoinment</div>
@@ -210,107 +210,85 @@
                 <div class="appointment-subtext">Contact us today to book your next service.</div>
             </div>
         </div>
-        <div class="form-section">
-            <img class="car-eye-img" src="Photos/CarEye2.jpg" />
-            <div class="form-container">
-                <div class="form-header">Book an</div>
-                <div class="form-title">Appointment Form</div>
-                <div class="contact-info-label">Contact Info</div>
-                <div class="form-field name">
-                    <div class="input-box"></div>
-                    <div class="input-label">Your Name</div>
-                </div>
-                <div class="form-field phone">
-                    <div class="input-box"></div>
-                    <div class="input-label">Phone Number</div>
-                </div>
-                <div class="form-field email">
-                    <div class="input-box"></div>
-                    <div class="input-label">Email Address</div>
-                </div>
-                <div class="form-field make">
-                    <div class="input-box"></div>
-                    <div class="input-label">Make</div>
-                </div>
-                <div class="form-field model">
-                    <div class="input-box"></div>
-                    <div class="input-label">Model</div>
-                </div>
-                <div class="form-field year">
-                    <div class="input-box"></div>
-                    <div class="input-label">Year</div>
-                </div>
-            </div>
-            <div class="appointment-details">
-                <div class="details-label">Appointment Details</div>
-                <div class="form-field date">
-                    <div class="input-box"></div>
-                    <div class="input-label">Date</div>
-                    <div class="calendar-icon">
-                        <div class="calendar-line-1"></div>
-                        <div class="calendar-line-2"></div>
-                        <div class="calendar-dot"></div>
-                        <div class="calendar-dot"></div>
-                        <div class="calendar-dot"></div>
-                        <div class="calendar-dot"></div>
-                        <div class="calendar-dot"></div>
-                        <div class="calendar-dot"></div>
-                        <div class="calendar-dot"></div>
-                        <div class="calendar-dot"></div>
-                        <div class="calendar-dot"></div>
-                        <div class="calendar-dot"></div>
-                        <div class="calendar-dot"></div>
-                        <div class="calendar-dot"></div>
+                
+        <section class="appointment-form">
+            <h2>Appointment</h2>
+            <form>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="make">Make</label>
+                        <input type="text" id="make" name="make">
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model</label>
+                        <input type="text" id="model" name="model">
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="text" id="year" name="year">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" name="time">
                     </div>
                 </div>
-                <div class="form-field time">
-                    <div class="input-box"></div>
-                    <div class="input-label">Time</div>
-                    <div class="time-label">PM</div>
+            </form>
+        </section>
+
+        <section class="services">
+            <h3>Select Services Needed</h3>
+            <div class="service-grid">
+                <div class="service-item">
+                    <input type="checkbox" id="oil" name="services" value="oil">
+                    <label for="oil">Oil Change</label>
                 </div>
-                <div class="form-field submit">
-                    <div class="input-box"></div>
-                    <div class="input-label">Submit</div>
+                <div class="service-item">
+                    <input type="checkbox" id="tire" name="services" value="tire">
+                    <label for="tire">Tire change and Balancing</label>
                 </div>
-            </div>
-            <div class="services-label">Select Services Needed</div>
-            <div class="services-list left">
-                <div class="service-option">
-                    <div class="checkbox"></div>
-                    <div class="service-text">Oil Change</div>
+                <div class="service-item">
+                    <input type="checkbox" id="filter" name="services" value="filter">
+                    <label for="filter">Filter change</label>
                 </div>
-                <div class="service-option">
-                    <div class="checkbox"></div>
-                    <div class="service-text">Tire change and Balancing</div>
+                <div class="service-item">
+                    <input type="checkbox" id="diagnostic" name="services" value="diagnostic">
+                    <label for="diagnostic">Computer diagnostic</label>
                 </div>
-                <div class="service-option">
-                    <div class="checkbox"></div>
-                    <div class="service-text">Filter change</div>
+                <div class="service-item">
+                    <input type="checkbox" id="brake" name="services" value="brake">
+                    <label for="brake">Brake change</label>
                 </div>
-                <div class="service-option">
-                    <div class="checkbox"></div>
-                    <div class="service-text">Computer diagnostic</div>
+                <div class="service-item">
+                    <input type="checkbox" id="engine" name="services" value="engine">
+                    <label for="engine">Engine replacement</label>
                 </div>
-            </div>
-            <div class="services-list right">
-                <div class="service-option">
-                    <div class="checkbox"></div>
-                    <div class="service-text">Brake change</div>
+                <div class="service-item">
+                    <input type="checkbox" id="transmission" name="services" value="transmission">
+                    <label for="transmission">Transmission replacement</label>
                 </div>
-                <div class="service-option">
-                    <div class="checkbox"></div>
-                    <div class="service-text">Engine replacment</div>
-                </div>
-                <div class="service-option">
-                    <div class="checkbox"></div>
-                    <div class="service-text">Transmission replacement</div>
-                </div>
-                <div class="service-option">
-                    <div class="checkbox"></div>
-                    <div class="service-text">Mechanical inspection</div>
+                <div class="service-item">
+                    <input type="checkbox" id="inspection" name="services" value="inspection">
+                    <label for="inspection">Mechanical inspection</label>
                 </div>
             </div>
-        </div>
+            <button type="submit">Make an appointment</button>
+        </section>
         <div class="footer-section">
             <div class="footer-header">
                 <div class="footer-line-1"></div>
