@@ -26,9 +26,8 @@ body {
     height: auto;
 }
 .navbar-toggler{
-    background-color: #ffffff;
+    background-color: #F8F8F8;
 }
-
 
 .navbar-light .navbar-nav .nav-link {
     color: #ffffff;
@@ -44,15 +43,9 @@ body {
 
 .header h1 {
     font-family: 'Monotype Corsiva', cursive;
-    font-size: 35px;
+    font-size: 32px;
     text-align: center;
     margin: 20px 0;
-}
-
-.header p {
-    font-family: 'Monotype Corsiva', cursive;
-    font-size: 19px;
-    text-align: center;
 }
 
 .breadcrumb {
@@ -68,6 +61,12 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+}
+
+.social-icon {
+    width: 26px;
+    height: 26px;
+    background: black;
 }
 
 /* About Section */
