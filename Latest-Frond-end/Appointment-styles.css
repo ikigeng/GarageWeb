@@ -17,39 +17,27 @@ body {
 
 /* Header */
 .header {
-    background: #D9D9D9;
-    border: 1px solid black;
-    padding: 20px;
-}
-
-.header-content {
-    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
     width: 120px;
-    height: 120px;
-    background: white;
-    border: 1px solid black;
-    text-align: center;
-    line-height: 120px;
-    font-size: 24px;
-    font-weight: 600;
+    height: auto;
+}
+.navbar-toggler{
+    background-color: #F8F8F8;
 }
 
-.nav-menu {
-    position: absolute;
-    top: 61px;
-    left: 489px;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-menu a {
-    color: black;
-    text-decoration: none;
+.navbar-light .navbar-nav .nav-link {
+    color: #ffffff;
     font-size: 18px;
     font-weight: 400;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #FF914D;
 }
 
 .header h1 {
@@ -59,16 +47,10 @@ body {
     margin: 20px 0;
 }
 
-.header p {
-    font-family: 'Monotype Corsiva', cursive;
-    font-size: 13px;
-    text-align: center;
-}
-
 .breadcrumb {
     text-align: center;
     font-size: 13px;
-    margin: 20px 0;
+    margin-top: 10px;
 }
 
 .header .social-icons {
@@ -79,6 +61,13 @@ body {
     flex-direction: column;
     gap: 15px;
 }
+
+.social-icon {
+    width: 26px;
+    height: 26px;
+    background: black;
+}
+
 
 /* Appointment Form */
 .appointment-form {
