@@ -1,10 +1,10 @@
-<link rel="stylesheet" href="Header.css">
+<link rel="stylesheet" href="css/header.css">
 <header class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-black">
             <div class="container-fluid">
                 <!-- Logo -->
                 <a class="navbar-brand" href="Home-index.html">
-                    <img src="IconOnly_TransparentCopy.png" alt="KK Auto Garage Logo" class="logo">
+                    <img src="img/IconOnly_TransparentCopy.png" alt="KK Auto Garage Logo" class="logo">
                 </a>
                 
                 <!-- Hamburger Toggle Button -->

@@ -1,0 +1,27 @@
+/* Header */
+.header {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+.navbar-toggler{
+    background-color: #F8F8F8;
+}
+.navbar-brand{
+    margin-left: var(--bs-navbar-brand-margin-end);
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #FF914D;
+}
