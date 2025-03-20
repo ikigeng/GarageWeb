@@ -2,7 +2,8 @@ CREATE TABLE Users (
     UserID INT AUTO_INCREMENT PRIMARY KEY,
     Email VARCHAR(50) UNIQUE NOT NULL,
     User_password VARCHAR(255) NOT NULL,  -- Store hashed passwords
-    User_address VARCHAR(100)
+    User_address VARCHAR(100),
+    Role VARCHAR(10) NOT NULL DEFAULT 'user' CHECK (Role IN ('user', 'admin'))  -- 'user' or 'admin'
 );
 
 CREATE TABLE Products (
