@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,18 +21,24 @@
                 <div class="card mt-5">
                     <div class="card-body">
                         <h2 class="card-title text-center mb-4">Login to KK Auto Garage</h2>
+                        <?php
+                        // Display error message if any
+                        if(isset($_GET['error'])) {
+                            echo '<div class="alert alert-danger">' . htmlspecialchars($_GET['error']) . '</div>';
+                        }
+                        ?>
                         <form action="User-auth.php" method="POST">
                             <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                                <label for="email" class="form-label">Username</label>
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
                             </div>
                             <div class="mb-3">
                                 <label for="role" class="form-label">Role</label>
-                                <select class="form-select" id="role" required>
+                                <select class="form-select" id="role" name="role" required>
                                     <option value="" disabled selected>Select your role</option>
                                     <option value="user">User</option>
                                     <option value="admin">Admin</option>

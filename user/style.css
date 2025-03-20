@@ -1,0 +1,103 @@
+/* Enhanced styling with Bootstrap consistency */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.header .navbar-nav .nav-link {
+    color: white;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.header .navbar-nav .nav-link:hover {
+    color: #0dcaf0;
+}
+
+.dashboard-container {
+    padding: 0 15px;
+}
+
+.dashboard-title {
+    color: #343a40;
+    font-weight: bold;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-title {
+    color: #343a40;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.appointment-list, .history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.appointment-card, .history-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+    transition: box-shadow 0.3s;
+}
+
+.appointment-card:hover, .history-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-info {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.btn-outline-info:hover {
+    background-color: #0dcaf0;
+    color: white;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Profile Modal Styling */
+.profile-photo img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #0dcaf0;
+}
+
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+    justify-content: center;
+}
+
+.btn-outline-danger {
+    padding: 8px 20px;
+}

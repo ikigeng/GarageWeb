@@ -1,62 +1,76 @@
 <?php
+session_start();
+include 'config.php'; // Make sure this points to your correct config file location
 
-include '../config.php';
+// Initialize errors array
+$errors = [];
 
-function userAuthentication($Email, $Password, $conn)
-{   
-    if (isset($_POST['login_user'])) {
-
-        $email20  = isset($_POST['Email']) ? $_POST['Email'] : null;
-        $password120 = isset($_POST['Password']) ? $_POST['Password'] : null;
+// Process login form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form inputs
+    $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+    $password = isset($_POST['password']) ? $_POST['password'] : '';
+    $role = isset($_POST['role']) ? $_POST['role'] : '';
     
-        if (empty($email20)) {
-            array_push($errors, "Email is required");
-        }
-        if (empty($password120)) {
-            array_push($errors, "Password is required");
-        }
-        if (count($errors) == 0) {
-    
-            // $query = "SELECT * FROM users WHERE email='$email20' AND password='$password_hash'";
-            $query = "SELECT Email, User_Password FROM Users WHERE Email = ? ";
-    
-            $stmt = $conn->prepare($query);
-            $stmt->bind_param("s", $Email);
-            $stmt->execute();
-            $stmt->bind_result($Email,$Password);
-            $stmt->store_result();
-            if ($stmt->num_rows == 1) // Check if the row exists
-                {
-                if ($stmt->fetch()) // Fetching the contents of the row
-                    {
-                    // Verify user password
-                    if (password_verify($password120, $Password)) {
-                        //password_verify("userenteredPassword",PasswordFromDatabase);
-    
-                        $_SESSION['Email'] = $Email;
-                        $_SESSION['success']  = "You are now logged in";
-                        $hour                 = time() + 15 * 24 * 60 * 60;
-                        setcookie('c_useremail', $email20, $hour);
-                        setcookie('c_password', $Password, $hour);
-                        header('location: home.php');
-    
-                    } else {
-    
-                        array_push($errors, "Password and username does not match");
-                    }
-    
-                }
-    
-            } else {
-    
-                array_push($errors, "Invalid User account");
-            }
-    
-    
-    
-        } else {
-            array_push($errors, "Unknown Error!");
-        }
+    // Validate inputs
+    if (empty($email)) {
+        $errors[] = "Email is required";
     }
+    if (empty($password)) {
+        $errors[] = "Password is required";
+    }
+    if (empty($role)) {
+        $errors[] = "Role selection is required";
+    }
+    
+    // If no validation errors, attempt authentication
+    if (count($errors) == 0) {
+        // Query to check user credentials based on role
+        $query = "SELECT * FROM Users WHERE Email = ? AND Role = ?";
+        
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("ss", $email, $role);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($result->num_rows == 1) {
+            $user = $result->fetch_assoc();
+            
+            // Verify password
+            if (password_verify($password, $user['User_Password'])) {
+                // Set session variables
+                $_SESSION['user_id'] = $user['UserID'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['role'] = $user['Role'];
+                $_SESSION['logged_in'] = true;
+                
+                // Redirect based on role
+                if ($role == 'admin') {
+                    header('Location: admin/dashboard.php');
+                } else {
+                    header('Location: user/dashboard.php');
+                }
+                exit();
+            } else {
+                // Password incorrect
+                header('Location: login.php?error=Invalid email or password');
+                exit();
+            }
+        } else {
+            // User not found
+            header('Location: login.php?error=Invalid email, password, or role');
+            exit();
+        }
+    } else {
+        // Validation errors
+        $error_message = implode("<br>", $errors);
+        header("Location: login.php?error=$error_message");
+        exit();
+    }
+} else {
+    // If not accessed via POST, redirect to login
+    header('Location: login.php');
+    exit();
 }
+
 ?>
