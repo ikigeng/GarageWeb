@@ -3,7 +3,8 @@ CREATE TABLE Users (
     Email VARCHAR(50) UNIQUE NOT NULL,
     User_password VARCHAR(255) NOT NULL,  -- Store hashed passwords
     User_address VARCHAR(100),
-    Role VARCHAR(10) NOT NULL DEFAULT 'user' CHECK (Role IN ('user', 'admin'))  -- 'user' or 'admin'
+    Phone VARCHAR(20),                    -- Add phone from UserProfiles if needed
+    Role VARCHAR(10) NOT NULL DEFAULT 'user' CHECK (Role IN ('user', 'admin'))
 );
 
 CREATE TABLE Products (

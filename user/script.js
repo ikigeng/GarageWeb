@@ -32,14 +32,14 @@ function updateDashboard(customerData) {
     document.getElementById('customer-name').textContent = customerData.name;
     document.getElementById('modal-customer-name').textContent = customerData.name;
     document.getElementById('customer-email').textContent = customerData.email;
-    document.getElementById('profile-photo').src = customerData.profilePhoto;
+
 
     // Populate upcoming appointments
     const upcomingList = document.getElementById('upcoming-appointments');
     // Clear existing content first
     upcomingList.innerHTML = '';
     
-    if (customerData.upcomingAppointments.length === 0) {
+    if (!customerData.upcomingAppointments || customerData.upcomingAppointments.length === 0) {
         upcomingList.innerHTML = '<p class="text-muted">No upcoming appointments</p>';
     } else {
         customerData.upcomingAppointments.forEach(appointment => {
@@ -64,7 +64,7 @@ function updateDashboard(customerData) {
     // Clear existing content first
     historyList.innerHTML = '';
     
-    if (customerData.purchaseHistory.length === 0) {
+    if (!customerData.purchaseHistory || customerData.purchaseHistory.length === 0) {
         historyList.innerHTML = '<p class="text-muted">No purchase history</p>';
     } else {
         customerData.purchaseHistory.forEach(purchase => {

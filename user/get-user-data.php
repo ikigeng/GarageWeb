@@ -17,13 +17,12 @@ $userId = $_SESSION['user_id'];
 $userData = [
     'name' => '',
     'email' => '',
-    'profilePhoto' => 'default-profile.jpg',
     'upcomingAppointments' => [],
-    'serviceHistory' => []
+    'purchaseHistory' => []
 ];
 
 // Get user basic info
-$userQuery = "SELECT Username, Email FROM Users WHERE UserID = ?";
+$userQuery = "SELECT Email FROM Users WHERE UserID = ?";
 $stmt = $conn->prepare($userQuery);
 $stmt->bind_param("i", $userId);
 $stmt->execute();
@@ -31,26 +30,13 @@ $result = $stmt->get_result();
 
 if ($result->num_rows === 1) {
     $user = $result->fetch_assoc();
-    $userData['name'] = $user['Username'];
+    // Extract username from email (part before @)
+    $username = explode('@', $user['Email'])[0];
+    $userData['name'] = $username;
     $userData['email'] = $user['Email'];
     
-    // Check if user has a profile photo
-    // This assumes you have a UserProfiles table with profile photos
-    $profileQuery = "SELECT ProfilePhoto FROM UserProfiles WHERE UserID = ?";
-    $profileStmt = $conn->prepare($profileQuery);
-    $profileStmt->bind_param("i", $userId);
-    $profileStmt->execute();
-    $profileResult = $profileStmt->get_result();
-    
-    if ($profileResult->num_rows === 1) {
-        $profile = $profileResult->fetch_assoc();
-        if (!empty($profile['ProfilePhoto'])) {
-            $userData['profilePhoto'] = $profile['ProfilePhoto'];
-        }
-    }
-    
     // Get upcoming appointments
-    $apptQuery = "SELECT ServiceType, AppointmentDate, AppointmentTime 
+    $apptQuery = "SELECT ServiceType, AppointmentDate, AppointmentTime, Status 
                   FROM Appointments 
                   WHERE UserID = ? AND AppointmentDate >= CURDATE() 
                   ORDER BY AppointmentDate ASC, AppointmentTime ASC";
@@ -63,25 +49,49 @@ if ($result->num_rows === 1) {
         $userData['upcomingAppointments'][] = [
             'service' => $appointment['ServiceType'],
             'date' => $appointment['AppointmentDate'],
-            'time' => $appointment['AppointmentTime']
+            'time' => $appointment['AppointmentTime'],
+            'status' => $appointment['Status']
         ];
     }
     
-    // Get service history
-    $historyQuery = "SELECT ServiceType, ServiceDate, Status 
-                     FROM ServiceHistory 
-                     WHERE UserID = ? 
-                     ORDER BY ServiceDate DESC";
+    // Get purchase history (both products and services)
+    $historyQuery = "SELECT 
+                        ph.PurchaseID,
+                        ph.Purchase_date,
+                        ph.Payment_Method,
+                        p.ProductName,
+                        p.Price as ProductPrice,
+                        gs.ServiceName,
+                        gs.MinimumPrice as ServicePrice
+                     FROM 
+                        PurchaseHistory ph
+                     LEFT JOIN 
+                        Products p ON ph.ProductID = p.ProductID
+                     LEFT JOIN 
+                        GarageServices gs ON ph.ServiceID = gs.ServiceID
+                     WHERE 
+                        ph.UserID = ?
+                     ORDER BY 
+                        ph.Purchase_date DESC";
+                        
     $historyStmt = $conn->prepare($historyQuery);
     $historyStmt->bind_param("i", $userId);
     $historyStmt->execute();
     $historyResult = $historyStmt->get_result();
     
-    while ($service = $historyResult->fetch_assoc()) {
-        $userData['serviceHistory'][] = [
-            'service' => $service['ServiceType'],
-            'date' => $service['ServiceDate'],
-            'status' => $service['Status']
+    while ($purchase = $historyResult->fetch_assoc()) {
+        // Determine if it's a product or service purchase
+        $itemName = !empty($purchase['ProductName']) ? $purchase['ProductName'] : $purchase['ServiceName'];
+        $itemPrice = !empty($purchase['ProductPrice']) ? $purchase['ProductPrice'] : $purchase['ServicePrice'];
+        $itemType = !empty($purchase['ProductName']) ? 'Product' : 'Service';
+        
+        $userData['purchaseHistory'][] = [
+            'id' => $purchase['PurchaseID'],
+            'date' => $purchase['Purchase_date'],
+            'item' => $itemName,
+            'price' => $itemPrice,
+            'type' => $itemType,
+            'paymentMethod' => $purchase['Payment_Method']
         ];
     }
 }
