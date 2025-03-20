@@ -3,8 +3,8 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-black">
             <div class="container-fluid">
                 <!-- Logo -->
-                <a class="navbar-brand" href="Home-index.html">
-                    <img src="img/IconOnly_TransparentCopy.png" alt="KK Auto Garage Logo" class="logo">
+                <a class="navbar-brand" href="index.php">
+                    <img src="Photos/IconOnly_TransparentCopy.png" alt="KK Auto Garage Logo" class="logo">
                 </a>
                 
                 <!-- Hamburger Toggle Button -->
@@ -15,28 +15,28 @@
                 <!-- Navigation Menu -->
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="Home-index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="About-index.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Services-index.html">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Appointment-index.html">Take appointment</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Shop-index.html">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Contact-index.html">Contact us</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Login-index.html">Login</a>
-                        </li>
-                    </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Home.php">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="About.php">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Services.php">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Appointment.php">Take appointment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Shop.php">Shop</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="Contact.php">Contact us</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="login.php">Login</a>
+                            </li>
+                        </ul>
                 </div>
             </div>
         </nav>

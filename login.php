@@ -10,8 +10,7 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/Login-index.css">
-    <!-- <link rel="stylesheet" href="css/header.css"> -->
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
    <?php include 'header.php'; ?>
@@ -23,7 +22,7 @@
                 <div class="card mt-5">
                     <div class="card-body">
                         <h2 class="card-title text-center mb-4">Login to KK Auto Garage</h2>
-                        <form action="../User-auth.php" method="POST">
+                        <form action="User-auth.php" method="POST">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
                                 <input type="text" class="form-control" id="username" placeholder="Enter username" required>

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+<!-- TODO: FIX THE NAVBAR -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KK Auto Garage</title>
-    <link rel="stylesheet" href="Services-style.css">
+    <link rel="stylesheet" href="css/Services.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -17,29 +18,32 @@
                         <span></span>
                         <span></span>
                     </div>
-                    <a class="navbar-brand" href="Home-index.html"><img class="logo" src="IconOnly_TransparentCopy.png" /></a>
-                    <div class="nav-links">
-                        <a class="nav-link" href="Home-index.html" >
-                            <div class="nav-item">Home</div>
-                        </a>
-                        <a class="nav-link" href="About-index.html">
-                            <div class="nav-item about">About</div>
-                        </a>
-                        <a class="nav-link" href="Services-index.html">
-                            <div class="nav-item servicess">Services</div>
-                        </a>
-                        <a class="nav-link" href="Appointment-index.html">
-                            <div class="nav-item appointmentss">Take appoinment</div>
-                        </a>
-                        <a class="nav-link" href="Shop-index.html">
-                            <div class="nav-item shop">Shop</div>
-                        </a>
-                        <a class="nav-link" href="Contact-index.html">
-                            <div class="nav-item contact">Contact us</div>
-                        </a>
-                        <a class="nav-link" href="Login-index.html">
-                            <div class="nav-item login">Login</div>
-                        </a>
+                    <a class="navbar-brand" href="index.php">
+                        <img src="Photos/IconOnly_TransparentCopy.png" alt="KK Auto Garage Logo" class="logo">
+                    </a>
+
+                <div class="nav-links">
+                    <a class="nav-link" href="index.php" >
+                        <div class="nav-item">Home</div>
+                    </a>
+                    <a class="nav-link" href="about.php">
+                        <div class="nav-item about">About</div>
+                    </a>
+                    <a class="nav-link" href="services.php">
+                        <div class="nav-item services">Services</div>
+                    </a>
+                    <a class="nav-link" href="appointment.php">
+                        <div class="nav-item appointment">Take appoinment</div>
+                    </a>
+                    <a class="nav-link" href="shop.php">
+                        <div class="nav-item shop">Shop</div>
+                    </a>
+                    <a class="nav-link" href="contact.php">
+                        <div class="nav-item contact">Contact us</div>
+                    </a>
+                    <a class="nav-link" href="Login.php">
+                        <div class="nav-item login">Login</div>
+                    </a>
                     </div>
                 </div>
                 <div class="title">KK Auto Garage Service</div>
@@ -141,6 +145,5 @@
             </div>
         </footer>
     </div>
-    <!-- <script src="ser"></script> -->
 </body>
 </html>

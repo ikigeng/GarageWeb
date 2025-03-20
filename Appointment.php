@@ -1,13 +1,13 @@
 <!DOCTYPE html>
+<!-- TODO: theres a lot to fix here -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KK Auto Garage - Appointment</title>
-   <link rel="stylesheet" href="Appointment-styles.css">
+   <link rel="stylesheet" href="css/Appointment.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<<<<<<< HEAD:Latest-Frond-end/Appointment-index.html
 </head>
 <body>
     <div class="container">
@@ -15,11 +15,13 @@
             <div class="header-content">
                 <div class="logo">LOGO</div>
                 <nav class="nav-menu">
-                    <a href="About-index.html">About</a>
-                    <a href="Services-index.html">Services</a>
-                    <a href="Appointment-index.html">Take appointment</a>
-                    <a href="Shop-index.html">Shop</a>
-                    <a href="Contact-index.html">Contact us</a>
+                    <a href="About.php">About</a>
+                    <a href="Services.php">Services</a>
+                    <a href="Appointment.php">Take appointment</a>
+                    <a href="Shop.php">Shop</a>
+                    <a href="Contact.php">Contact us</a>
+                    <a class="nav-link" href="login.php">Login</a>
+                            
                 </nav>
                 <h1>Make an Appointment</h1>
                 <p>Schedule your next appointment with us using our easy-to-use online appointment form.</p>
@@ -29,44 +31,6 @@
                     <div class="social-icon"></div>
                     <div class="social-icon"></div>
                     <div class="social-icon"></div>
-=======
-    </head>
-    <header class="header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-black">
-            <div class="container-fluid">
-                <!-- Logo -->
-                <a class="navbar-brand" href="Home-index.html">
-                    <img src="IconOnly_TransparentCopy.png" alt="KK Auto Garage Logo" class="logo">
-                </a>
-                
-                <!-- Hamburger Toggle Button -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                
-                <!-- Navigation Menu -->
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="Home-index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="About-index.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Services-index.html">Services</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Appointment-index.html">Take appointment</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Shop-index.html">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Contact-index.html">Contact us</a>
-                        </li>
-                    </ul>
->>>>>>> a4dd2b8c043705fc448dc5794a45132aff66f308:Frond-end/Appointment-index.html
                 </div>
             </div>
         </nav>
@@ -188,7 +152,6 @@
             </div>
         </footer>
     </div>
-    <script src="Appointment-index.html"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

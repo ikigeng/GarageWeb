@@ -15,9 +15,7 @@
     padding: 10px 15px;
     transition: color 0.3s;
 }
-.navbar-toggler{
-    background-color: #F8F8F8;
-}
+
 .navbar-brand{
     margin-left: var(--bs-navbar-brand-margin-end);
 }
@@ -25,3 +23,40 @@
 .navbar-light .navbar-nav .nav-link:hover {
     color: #FF914D;
 }
+
+
+
+    /* Header Removed parts
+  
+    .navbar-toggler{
+        background-color: #ffffff;
+    }
+    
+    .header h1 {
+        font-family: 'Monotype Corsiva', cursive;
+        font-size: 35px;
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    .header p {
+        font-family: 'Monotype Corsiva', cursive;
+        font-size: 19px;
+        text-align: center;
+    }
+    
+    .breadcrumb {
+        text-align: center;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+    
+    .header .social-icons {
+        position: absolute;
+        right: 20px;
+        top: 236px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+     */
