@@ -9,4 +9,6 @@ deployment:
     # - /bin/cp -r Front-end/SvgFiles/. $DEPLOYPATH/SvgFiles/
     - /bin/cp User-auth.php $DEPLOYPATH
     - /bin/cp User-functions.php $DEPLOYPATH
+    - /bin/cp *.php $DEPLOYPATH #not sure if the wildcard would work buut we'll see
+    - /bin/cp footer.php $DEPLOYPATH
     - /bin/find -type f -maxdepth 1 -exec /bin/cp {} $DEPLOYPATH \;
