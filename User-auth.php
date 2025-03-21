@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($role)) {
         $errors[] = "Role selection is required";
     }
-    
     // If no validation errors, attempt authentication
     if (count($errors) == 0) {
         // Query to check user credentials based on role
@@ -37,10 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $user = $result->fetch_assoc();
             
             // Verify password
-            if (password_verify($password, $user['User_Password'])) {
+            if ($password == $user["User_password"]) {
                 // Set session variables
                 $_SESSION['user_id'] = $user['UserID'];
-                $_SESSION['email'] = $user['email'];
+                $_SESSION['email'] = $user['Email'];
                 $_SESSION['role'] = $user['Role'];
                 $_SESSION['logged_in'] = true;
                 
