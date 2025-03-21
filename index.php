@@ -25,7 +25,7 @@
                         <div class="nav-item about">About</div>
                     </a>
                     <a class="nav-link" href="services.php">
-                        <div class="nav-item services">Services</div>
+                        <div class="nav-item">Services</div>
                     </a>
                     <a class="nav-link" href="appointment.php">
                         <div class="nav-item appointment">Take appoinment</div>
