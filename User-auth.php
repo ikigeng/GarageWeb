@@ -36,28 +36,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($result->num_rows == 1) {
             $user = $result->fetch_assoc();
             
+            // For debugging - check what's in $user and if password matches
+            // Comment these out in production
+            // error_log("User data: " . print_r($user, true));
+            // error_log("Password match: " . password_verify($password, $user['User_Password']));
+            
             // Verify password
             if (password_verify($password, $user['User_Password'])) {
                 // Set session variables
                 $_SESSION['user_id'] = $user['UserID'];
-                $_SESSION['email'] = $user['email'];
-                $_SESSION['role'] = $user['Role'];
+                $_SESSION['email'] = $user['Email'];  
+                $_SESSION['role'] = $user['Role'];    
                 $_SESSION['logged_in'] = true;
                 
-                // Redirect based on role
-                if ($role == 'admin') {
+                // Redirect based on role - use lowercase comparison
+                if (strtolower($user['Role']) == 'admin') {
                     header('Location: admin/dashboard.php');
+                    exit();
                 } else {
                     header('Location: user/dashboard.php');
+                    exit();
                 }
-                exit();
             } else {
                 // Password incorrect
+                error_log("Password verification failed for user: $email");
                 header('Location: login.php?error=Invalid email or password');
                 exit();
             }
         } else {
             // User not found
+            error_log("No user found with email: $email and role: $role");
             header('Location: login.php?error=Invalid email, password, or role');
             exit();
         }
@@ -72,5 +80,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header('Location: login.php');
     exit();
 }
-
 ?>
