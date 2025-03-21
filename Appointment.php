@@ -33,85 +33,97 @@
                     <div class="social-icon"></div>
                 </div>
             </div>
-        </nav>
-</header>
+        </header>
+
+        <?php
+        // Display success message if set
+        if (isset($_GET['success'])) {
+            echo '<div class="alert alert-success my-3">' . htmlspecialchars($_GET['success']) . '</div>';
+        }
+        
+        // Display error message if set
+        if (isset($_GET['error'])) {
+            echo '<div class="alert alert-danger my-3">' . htmlspecialchars($_GET['error']) . '</div>';
+        }
+        ?>
+
         <section class="appointment-form">
             <h2>Appointment</h2>
-            <form>
+            <form action="process-appointment.php" method="POST">
                 <div class="form-grid">
                     <div class="form-group">
                         <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name">
+                        <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
+                        <input type="tel" id="phone" name="phone" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
                         <label for="make">Make</label>
-                        <input type="text" id="make" name="make">
+                        <input type="text" id="make" name="make" required>
                     </div>
                     <div class="form-group">
                         <label for="model">Model</label>
-                        <input type="text" id="model" name="model">
+                        <input type="text" id="model" name="model" required>
                     </div>
                     <div class="form-group">
                         <label for="year">Year</label>
-                        <input type="text" id="year" name="year">
+                        <input type="text" id="year" name="year" required>
                     </div>
                     <div class="form-group">
                         <label for="date">Date</label>
-                        <input type="date" id="date" name="date">
+                        <input type="date" id="date" name="date" required min="<?php echo date('Y-m-d'); ?>">
                     </div>
                     <div class="form-group">
                         <label for="time">Time</label>
-                        <input type="time" id="time" name="time">
+                        <input type="time" id="time" name="time" required min="08:30" max="17:00">
                     </div>
                 </div>
-            </form>
-        </section>
 
-        <section class="services">
-            <h3>Select Services Needed</h3>
-            <div class="service-grid">
-                <div class="service-item">
-                    <input type="checkbox" id="oil" name="services" value="oil">
-                    <label for="oil">Oil Change</label>
-                </div>
-                <div class="service-item">
-                    <input type="checkbox" id="tire" name="services" value="tire">
-                    <label for="tire">Tire change and Balancing</label>
-                </div>
-                <div class="service-item">
-                    <input type="checkbox" id="filter" name="services" value="filter">
-                    <label for="filter">Filter change</label>
-                </div>
-                <div class="service-item">
-                    <input type="checkbox" id="diagnostic" name="services" value="diagnostic">
-                    <label for="diagnostic">Computer diagnostic</label>
-                </div>
-                <div class="service-item">
-                    <input type="checkbox" id="brake" name="services" value="brake">
-                    <label for="brake">Brake change</label>
-                </div>
-                <div class="service-item">
-                    <input type="checkbox" id="engine" name="services" value="engine">
-                    <label for="engine">Engine replacement</label>
-                </div>
-                <div class="service-item">
-                    <input type="checkbox" id="transmission" name="services" value="transmission">
-                    <label for="transmission">Transmission replacement</label>
-                </div>
-                <div class="service-item">
-                    <input type="checkbox" id="inspection" name="services" value="inspection">
-                    <label for="inspection">Mechanical inspection</label>
-                </div>
-            </div>
-            <button type="submit">Make an appointment</button>
+                <section class="services">
+                    <h3>Select Services Needed</h3>
+                    <div class="service-grid">
+                        <div class="service-item">
+                            <input type="checkbox" id="oil" name="services[]" value="Oil Change">
+                            <label for="oil">Oil Change</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="tire" name="services[]" value="Tire change and Balancing">
+                            <label for="tire">Tire change and Balancing</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="filter" name="services[]" value="Filter change">
+                            <label for="filter">Filter change</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="diagnostic" name="services[]" value="Computer diagnostic">
+                            <label for="diagnostic">Computer diagnostic</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="brake" name="services[]" value="Brake change">
+                            <label for="brake">Brake change</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="engine" name="services[]" value="Engine replacement">
+                            <label for="engine">Engine replacement</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="transmission" name="services[]" value="Transmission replacement">
+                            <label for="transmission">Transmission replacement</label>
+                        </div>
+                        <div class="service-item">
+                            <input type="checkbox" id="inspection" name="services[]" value="Mechanical inspection">
+                            <label for="inspection">Mechanical inspection</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Make an appointment</button>
+                </section>
+            </form>
         </section>
 
         <footer class="footer">
