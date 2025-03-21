@@ -12,7 +12,6 @@ composer.phar
 .env.*.local
 
 # Configuration with sensitive information
-config.php
 database.php
 *config*.ini
 
@@ -50,8 +49,3 @@ $RECYCLE.BIN/
 *.msp
 *.lnk
 
-
-# other files
-db/GarageDiagram.png
-Front-end/index-old.html
-old and mysql complete.zip
