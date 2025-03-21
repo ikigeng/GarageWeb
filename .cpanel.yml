@@ -2,13 +2,25 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/kkaugcih/public_html
     - export REPOPATH=/home/kkaugcih/repositories/GarageWeb
-    - /bin/cp index.php $DEPLOYPATH
-    # - /bin/cp Front-end/*.html $DEPLOYPATH
-    # - /bin/cp Front-end/*.css $DEPLOYPATH
-    # - /bin/cp -r Front-end/Photos/. $DEPLOYPATH/Photos/
-    # - /bin/cp -r Front-end/SvgFiles/. $DEPLOYPATH/SvgFiles/
-    - /bin/cp User-auth.php $DEPLOYPATH
-    - /bin/cp User-functions.php $DEPLOYPATH
-    - /bin/cp *.php $DEPLOYPATH #not sure if the wildcard would work buut we'll see
-    - /bin/cp footer.php $DEPLOYPATH
-    - /bin/find -type f -maxdepth 1 -exec /bin/cp {} $DEPLOYPATH \;
+    
+    # Copy all PHP files
+    - /bin/cp -R *.php $DEPLOYPATH
+    
+    # Copy all directories except those that would be in .gitignore
+    - /bin/cp -R css $DEPLOYPATH
+    - /bin/cp -R js $DEPLOYPATH
+    - /bin/cp -R images $DEPLOYPATH
+    - /bin/cp -R admin $DEPLOYPATH
+    - /bin/cp -R user $DEPLOYPATH
+    - /bin/cp -R db $DEPLOYPATH
+    
+    # Copy other important files (like .htaccess, if any)
+    - /bin/cp -f .htaccess $DEPLOYPATH 2>/dev/null || :
+    
+    # Copy any other files in the root directory
+    - /bin/find . -maxdepth 1 -type f -not -name ".git*" -not -name "*.yml" -not -name "README*" -exec /bin/cp {} $DEPLOYPATH \;
+    
+    # Set proper permissions
+    - /bin/chmod 755 $DEPLOYPATH
+    - /bin/find $DEPLOYPATH -type d -exec /bin/chmod 755 {} \;
+    - /bin/find $DEPLOYPATH -type f -exec /bin/chmod 644 {} \;
