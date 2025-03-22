@@ -4,7 +4,7 @@
  */
 
 // Database credentials
-$db_host = 'kkaugcih_';      // Database host
+$db_host = 'localhost';      // Database host
 $db_user = 'kkaugcih ';           // Database username 
 $db_password = 'Gti13ds60%pr';           // Database password 
 $db_name = 'GarageWeb';   // Name of the database
