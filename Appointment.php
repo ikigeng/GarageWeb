@@ -15,11 +15,11 @@
             <div class="header-content">
                 <div class="logo">LOGO</div>
                 <nav class="nav-menu">
-                    <a href="About.php">About</a>
-                    <a href="Services.php">Services</a>
-                    <a href="Appointment.php">Take appointment</a>
-                    <a href="Shop.php">Shop</a>
-                    <a href="Contact.php">Contact us</a>
+                    <a href="about.php">About</a>
+                    <a href="services.php">Services</a>
+                    <a href="appointment.php">Take appointment</a>
+                    <a href="shop.php">Shop</a>
+                    <a href="contact.php">Contact us</a>
                     <a class="nav-link" href="login.php">Login</a>
                             
                 </nav>

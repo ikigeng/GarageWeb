@@ -9,43 +9,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    <?php include 'header.php'; ?>
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <div class="nav-bar">
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <a class="navbar-brand" href="index.php">
-                        <img src="Photos/IconOnly_TransparentCopy.png" alt="KK Auto Garage Logo" class="logo">
-                    </a>
-
-                <div class="nav-links">
-                    <a class="nav-link" href="index.php" >
-                        <div class="nav-item">Home</div>
-                    </a>
-                    <a class="nav-link" href="about.php">
-                        <div class="nav-item about">About</div>
-                    </a>
-                    <a class="nav-link" href="services.php">
-                        <div class="nav-item services">Services</div>
-                    </a>
-                    <a class="nav-link" href="appointment.php">
-                        <div class="nav-item appointment">Take appoinment</div>
-                    </a>
-                    <a class="nav-link" href="shop.php">
-                        <div class="nav-item shop">Shop</div>
-                    </a>
-                    <a class="nav-link" href="contact.php">
-                        <div class="nav-item contact">Contact us</div>
-                    </a>
-                    <a class="nav-link" href="Login.php">
-                        <div class="nav-item login">Login</div>
-                    </a>
-                    </div>
-                </div>
+            
                 <div class="title">KK Auto Garage Service</div>
                 <div class="subtitle">A range of services that we provide</div>
                 <div class="breadcrumb">Home / Services</div>
@@ -103,47 +71,7 @@
                 <p>Contact us today to book your next service.</p>
             </div>
         </section>
-        <footer class="footer">
-            <!-- <div class="footer-line-1"></div>
-            <div class="footer-line-2"></div> -->
-            <div class="footer-content">
-                
-                
-                <div class="footer-logo">KK Auto Garage</div>
-                <div class="footer-column">
-                    <h4>Reach to Us</h4>
-                    <p>188 Rue Brière, Saint-Jérôme</p>
-                    <p>(438)-778-5775</p>
-                    <p>kkautogarage@gmail.com</p>
-                    <p>www.kkautogarage.com</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Opening Hours</h4>
-                    <p>Mon-Fri : 8:30 - 17:30</p>
-                    <p>Saturday : 8:30 - 12:00</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <p>About Us</p>
-                    <p>Why with Us</p>
-                    <p>Our Services</p>
-                    <p>How It Works</p>
-                    <p>Appointment</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Social Media Links</h4>
-                    <div class="social-icons">
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-youtube"></a>
-                        <a href="#" class="fa fa-instagram"></a>
-                        <a href="#" class="fa fa-whatsapp"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>Copyright 2025 KK Auto Garage. All rights reserved</p>
-            </div>
-        </footer>
+        <?php include 'footer.php'; ?>
     </div>
 </body>
 </html>

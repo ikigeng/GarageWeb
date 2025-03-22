@@ -9,48 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <header class="header">
-            <nav class="navbar navbar-expand-lg navbar-light bg-black">
-                <div class="container-fluid">
-                    <!-- Logo -->
-                    <a class="navbar-brand" href="index.php">
-                        <img src="Photos/IconOnly_TransparentCopy.png" alt="KK Auto Garage Logo" class="logo">
-                    </a>
-                    
-                    <!-- Hamburger Toggle Button -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    
-                    <!-- Navigation Menu -->
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="Home.php">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="About.php">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Services.php">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Appointment.php">Take appointment</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Shop.php">Shop</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="Contact.php">Contact us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="login.php">Login</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-    </header>
+<?php include 'header.php'; ?>
         <div class="container">
         <section class="products">
             <div class="product-grid">
@@ -92,43 +51,7 @@
             <p>Contact us today to book your next service.</p>
         </section>
 
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-logo">KK Auto Garage</div>
-                <div class="footer-column">
-                    <h4>Reach to Us</h4>
-                    <p>188 Rue Brière, Saint-Jérôme</p>
-                    <p>(438)-778-5775</p>
-                    <p>kkautogarage@gmail.com</p>
-                    <p>www.kkautogarage.com</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Opening Hours</h4>
-                    <p>Mon-Fri : 8:30 - 17:30</p>
-                    <p>Saturday : 8:30 - 12:00</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <p>About Us</p>
-                    <p>Why with Us</p>
-                    <p>Our Services</p>
-                    <p>How It Works</p>
-                    <p>Appointment</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Social Media Links</h4>
-                    <div class="social-icons">
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-youtube"></a>
-                        <a href="#" class="fa fa-instagram"></a>
-                        <a href="#" class="fa fa-whatsapp"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>Copyright © 2025 KK Auto Garage. All rights reserved.</p>
-            </div>
-        </footer>
+        <?php include 'footer.php'; ?>
     </div>
 
     <script src="js/Shop.js"></script>

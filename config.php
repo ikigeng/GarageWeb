@@ -4,10 +4,10 @@
  */
 
 // Database credentials
-$db_host = 'localhost';      // Database host
-$db_user = 'root';           // Database username 
-$db_password = '';           // Database password 
-$db_name = 'garageweb_db';   // Name of the database
+$db_host = 'kkaugcih_';      // Database host
+$db_user = 'kkaugcih ';           // Database username 
+$db_password = 'Gti13ds60%pr';           // Database password 
+$db_name = 'GarageWeb';   // Name of the database
 
 // Create database connection
 $conn = new mysqli($db_host, $db_user, $db_password, $db_name);

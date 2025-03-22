@@ -28,22 +28,22 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="Home.php">Home</a>
+                                <a class="nav-link" href="index.php">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="About.php">About</a>
+                                <a class="nav-link" href="about.php">About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Services.php">Services</a>
+                                <a class="nav-link" href="services.php">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Appointment.php">Take appointment</a>
+                                <a class="nav-link" href="appointment.php">Take appointment</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Shop.php">Shop</a>
+                                <a class="nav-link" href="shop.php">Shop</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Contact.php">Contact us</a>
+                                <a class="nav-link" href="contact.php">Contact us</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="login.php">Login</a>
